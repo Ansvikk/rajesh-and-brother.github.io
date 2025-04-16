@@ -1,15 +1,18 @@
-let products = {};
+let products = JSON.parse(localStorage.getItem('products')) || {};
 
 document.getElementById('product-form').addEventListener('submit', function (e) {
   e.preventDefault();
-  
+
   const name = document.getElementById('product-name').value.trim();
   const price = parseFloat(document.getElementById('product-price').value);
 
   if (!name || isNaN(price)) return;
 
-  // Add or update
+  // Add or update product
   products[name] = price;
+
+  // Save to localStorage
+  localStorage.setItem('products', JSON.stringify(products));
 
   // Clear form
   document.getElementById('product-form').reset();
@@ -39,3 +42,6 @@ function editProduct(name) {
   document.getElementById('product-name').value = name;
   document.getElementById('product-price').value = products[name];
 }
+
+// Load table on page load
+renderTable();
