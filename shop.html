@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shop Product Rates</title>
+  <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🛒 Shop Product Rates</h1>
+    
+    <form id="product-form">
+      <input type="text" id="product-name" placeholder="Product Name" required>
+      <input type="number" id="product-price" placeholder="Price" required>
+      <button type="submit">Add / Update</button>
+    </form>
+
+    <table id="product-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Items will appear here -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="shop.js"></script>
+</body>
+</html>
+
